@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient | Saami Scan Center</title>
+    <link rel="icon" href="img/icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .logout-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+        }
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+        .form-group img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .icon-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .note {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <form id="patientForm" method="post" action="" name="contact-form">
+
+            <img src="img/logo.png" height="30%" width="30%" alt="Saami Scan Logo"> 
+
+        <div style="text-align:center">
+            <h3>SAAMI SCAN - ADD PATIENT INFORMATION</h3>
+        </div>
+        <div class="icon-container">
+            <img src="img/gif 2.gif" height="30%" width="80%" alt="Patient Icon">            
+        </div>
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter patient's full name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter patient's age" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter email address">
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Admission</label>
+            <input type="date" id="dob" name="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" placeholder="Enter patient's address" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="treatment">Treatment Type</label>
+            <select id="treatment" name="treatment" required>
+                <option value="">Select Treatment</option>
+                <option value="CT Scan">CT Scan</option>
+                <option value="Ultrasound">Ultrasound</option>
+                <option value="X-Ray">X-Ray</option>
+                <option value="Blood Tests">Blood Tests</option>
+                <option value="Echo Cardiogram">Echo Cardiogram</option>
+                <option value="ECG Tests">ECG Tests</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="medicalHistory">Medical History</label>
+            <textarea id="medicalHistory" name="medicalHistory" placeholder="Describe any relevant medical history" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="symptoms">Current Symptoms</label>
+            <textarea id="symptoms" name="symptoms" placeholder="Describe current symptoms or issues" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" placeholder="Any additional information" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+        <br>
+        <br>
+        <button type="button" class="logout-btn" onclick="logout()">Logout</button>
+    </form>
+
+    <footer>
+        <p style="text-align:center">© Copyright <span id="year"></span>  |  All Rights Reserved by <a href="https://www.saamiscan.com" target="_blank">saamiscan.com</a> </p>
+    </footer>
+
+    <script>
+        function logout() {
+            if (confirm("Are you sure you want to logout?")) {
+                window.location.href = "index.html"; 
+            }
+        }
+    </script>
+
+    <script src="Google Sheet.js"></script>
+
+    <script>
+        const yearSpan = document.getElementById("year");
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = currentYear;
+    </script>
+
+</body>
+</html>

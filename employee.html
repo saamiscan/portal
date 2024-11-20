@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Saami Scan Center</title>
+    <link rel="icon" href="img/icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .logout-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+        }
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="employeeForm" method="post" action="" name="employee-form">
+        <img src="img/logo.png" height="30%" width="30%" alt="Saami Scan Logo"> 
+
+        <div style="text-align:center">
+            <h3>SAAMI SCAN - ADD EMPLOYEE INFORMATION</h3>
+        </div>
+        <div class="icon-container" style="text-align:center">
+            <img src="img/avatar.gif" height="30%" width="30%" alt="Patient Icon">            
+        </div>
+
+        <div class="form-group">
+            <label for="employeeID">Employee ID</label>
+            <input type="text" id="employeeID" name="employeeID" placeholder="Enter employee ID" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter full name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input type="tel" id="contactNumber" name="contactNumber" placeholder="Enter contact number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="aadhaarNumber">Aadhaar Number</label>
+            <input type="tel" id="aadhaarNumber" name="aadhaarNumber" placeholder="Enter aadhaar number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter email address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" placeholder="Enter address" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="designation">Designation</label>
+            <input type="text" id="designation" name="designation" placeholder="Enter designation" required>
+        </div>
+
+        <div class="form-group">
+            <label for="salary">Salary</label>
+            <input type="tel" id="salary" name="salary" placeholder="Enter salary" required>
+        </div>
+
+        <div class="form-group">
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" placeholder="Enter department" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="joiningDate">Date of Joining</label>
+            <input type="date" id="joiningDate" name="joiningDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="bloodgroup">Blood Group</label>
+            <input type="text" id="bloodgroup" name="bloodgroup" placeholder="Enter Blood Group" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fathername">Father Name</label>
+            <input type="text" id="fathername" name="fathername" placeholder="Enter Father Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fcontactNumber">Father Contact Number</label>
+            <input type="tel" id="fcontactNumber" name="fcontactNumber" placeholder="Enter Father Contact Number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mothername">Mother Name</label>
+            <input type="text" id="mothername" name="mothername" placeholder="Enter Mother Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mcontactNumber">Mother Contact Number</label>
+            <input type="tel" id="mcontactNumber" name="mcontactNumber" placeholder="Enter Mother Number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="skills">Experience | Skills</label>
+            <textarea id="skills" name="skills" placeholder="List skills separated by commas" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" placeholder="Any additional information" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+        <br>
+        <br>
+        <button type="button" class="logout-btn" onclick="logout()">Logout</button>
+    </form>
+
+    <footer>
+        <p style="text-align:center">© Copyright <span id="year"></span>  |  All Rights Reserved by <a href="https://www.saamiscan.com" target="_blank">saamiscan.com</a> </p>
+    </footer>
+
+    <script>
+        function logout() {
+            if (confirm("Are you sure you want to logout?")) {
+                window.location.href = "index.html"; 
+            }
+        }
+    </script>
+
+<script>
+    const yearSpan = document.getElementById("year");
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
+</script>
+
+<script src="Emp Google Sheet.js"></script>
+
+</body>
+</html>
